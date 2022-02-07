@@ -3,21 +3,12 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "volar.tsPlugin": true,
   "volar.tsPluginStatus": false,
-  //===========================================
-  //============= Editor ======================
-  //===========================================
   "explorer.openEditors.visible": 0,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "diffEditor.ignoreTrimWhitespace": false,
-  //===========================================
-  //============= Other =======================
-  //===========================================
   "breadcrumbs.enabled": true,
   "open-in-browser.default": "chrome",
-  //===========================================
-  //============= files =======================
-  //===========================================
   "files.eol": "\n",
   "search.exclude": {
     "**/node_modules": true,
@@ -151,5 +142,9 @@
     "brotli",
     "tailwindcss",
     "sider"
-  ]
+  ],
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 3000,
+  "stylelint.autoFixOnSave": true,
+  "prettier.endOfLine": "auto"
 }

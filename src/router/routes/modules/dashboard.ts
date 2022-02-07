@@ -1,7 +1,6 @@
-import type { AppRouteModule } from '/@/router/types';
-
-import { LAYOUT } from '/@/router/constant';
 import { t } from '/@/hooks/web/useI18n';
+import { LAYOUT } from '/@/router/constant';
+import type { AppRouteModule } from '/@/router/types';
 
 const dashboard: AppRouteModule = {
   path: '/dashboard',

@@ -5,23 +5,7 @@
   >
     <div
       :class="`${prefixCls}__unlock`"
-      class="
-        absolute
-        top-0
-        left-1/2
-        flex
-        pt-5
-        h-16
-        items-center
-        justify-center
-        sm:text-md
-        xl:text-xl
-        text-white
-        flex-col
-        cursor-pointer
-        transform
-        translate-x-1/2
-      "
+      class="absolute top-0 left-1/2 flex pt-5 h-16 items-center justify-center sm:text-md xl:text-xl text-white flex-col cursor-pointer transform translate-x-1/2"
       @click="handleShowForm(false)"
       v-show="showDate"
     >
@@ -161,12 +145,12 @@
     &__hour,
     &__minute {
       display: flex;
-      font-weight: 700;
+      align-items: center;
+      justify-content: center;
       color: #bababa;
+      font-weight: 700;
       background-color: #141313;
       border-radius: 30px;
-      justify-content: center;
-      align-items: center;
 
       @media screen and (max-width: @screen-md) {
         span:not(.meridiem) {
@@ -208,12 +192,12 @@
       top: 0;
       left: 0;
       display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(8px);
-      justify-content: center;
-      align-items: center;
 
       &-content {
         width: 260px;
@@ -230,8 +214,8 @@
 
         &-name {
           margin-top: 5px;
-          font-weight: 500;
           color: #bababa;
+          font-weight: 500;
         }
       }
 
