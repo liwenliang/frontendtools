@@ -350,9 +350,9 @@
 
     &-logo {
       display: flex;
+      justify-content: center;
       height: @header-height;
       padding-left: 0 !important;
-      justify-content: center;
 
       img {
         width: @logo-width;
@@ -373,8 +373,8 @@
 
       .@{prefix-cls}-module {
         &__item {
-          font-weight: normal;
           color: rgba(0, 0, 0, 0.65);
+          font-weight: normal;
 
           &--active {
             color: @primary-color;
@@ -452,8 +452,8 @@
         }
         // &:hover,
         &--active {
-          font-weight: 700;
           color: @white;
+          font-weight: 700;
           background-color: @sider-dark-darken-bg-color;
 
           &::before {
@@ -486,13 +486,13 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.65);
-      text-align: center;
-      cursor: pointer;
-      background-color: @trigger-dark-bg-color;
       height: 36px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 14px;
       line-height: 36px;
+      text-align: center;
+      background-color: @trigger-dark-bg-color;
+      cursor: pointer;
     }
 
     &.light &-trigger {
@@ -511,15 +511,15 @@
 
       &__title {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         height: @header-height;
+        color: @primary-color;
         // margin-left: -6px;
         font-size: 18px;
-        color: @primary-color;
         border-bottom: 1px solid rgb(238, 238, 238);
         opacity: 0;
         transition: unset;
-        align-items: center;
-        justify-content: space-between;
 
         &.show {
           min-width: 130px;
@@ -568,11 +568,11 @@
       right: -1px;
       width: 1px;
       height: calc(100% - 50px);
-      cursor: ew-resize;
       background-color: #f8f8f9;
       border-top: none;
       border-bottom: none;
       box-shadow: 0 0 4px 0 rgba(28, 36, 56, 0.15);
+      cursor: ew-resize;
     }
   }
 </style>

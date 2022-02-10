@@ -1,42 +1,36 @@
-import { defineComponent, computed, unref } from 'vue';
-import { BasicDrawer } from '/@/components/Drawer/index';
 import { Divider } from 'ant-design-vue';
+import { computed, defineComponent, unref } from 'vue';
 import {
-  TypePicker,
-  ThemeColorPicker,
+  InputNumberItem,
+  SelectItem,
   SettingFooter,
   SwitchItem,
-  SelectItem,
-  InputNumberItem,
+  ThemeColorPicker,
+  TypePicker,
 } from './components';
-
-import { AppDarkModeToggle } from '/@/components/Application';
-
-import { MenuTypeEnum, TriggerEnum } from '/@/enums/menuEnum';
-
-import { useRootSetting } from '/@/hooks/setting/useRootSetting';
-import { useMenuSetting } from '/@/hooks/setting/useMenuSetting';
-import { useHeaderSetting } from '/@/hooks/setting/useHeaderSetting';
-import { useMultipleTabSetting } from '/@/hooks/setting/useMultipleTabSetting';
-import { useTransitionSetting } from '/@/hooks/setting/useTransitionSetting';
-import { useI18n } from '/@/hooks/web/useI18n';
-
-import { baseHandler } from './handler';
-
 import {
-  HandlerEnum,
   contentModeOptions,
-  topMenuAlignOptions,
   getMenuTriggerOptions,
-  routerTransitionOptions,
+  HandlerEnum,
   menuTypeList,
   mixSidebarTriggerOptions,
+  routerTransitionOptions,
+  topMenuAlignOptions,
 } from './enum';
-
+import { baseHandler } from './handler';
+import { AppDarkModeToggle } from '/@/components/Application';
+import { BasicDrawer } from '/@/components/Drawer/index';
+import { MenuTypeEnum, TriggerEnum } from '/@/enums/menuEnum';
+import { useHeaderSetting } from '/@/hooks/setting/useHeaderSetting';
+import { useMenuSetting } from '/@/hooks/setting/useMenuSetting';
+import { useMultipleTabSetting } from '/@/hooks/setting/useMultipleTabSetting';
+import { useRootSetting } from '/@/hooks/setting/useRootSetting';
+import { useTransitionSetting } from '/@/hooks/setting/useTransitionSetting';
+import { useI18n } from '/@/hooks/web/useI18n';
 import {
+  APP_PRESET_COLOR_LIST,
   HEADER_PRESET_BG_COLOR_LIST,
   SIDE_BAR_BG_COLOR_LIST,
-  APP_PRESET_COLOR_LIST,
 } from '/@/settings/designSetting';
 
 const { t } = useI18n();

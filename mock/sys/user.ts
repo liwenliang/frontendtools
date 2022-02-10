@@ -1,5 +1,5 @@
 import { MockMethod } from 'vite-plugin-mock';
-import { resultError, resultSuccess, getRequestToken, requestParams } from '../_util';
+import { getRequestToken, requestParams, resultError, resultSuccess } from '../_util';
 
 export function createFakeUserList() {
   return [
@@ -11,7 +11,7 @@ export function createFakeUserList() {
       desc: 'manager',
       password: '123456',
       token: 'fakeToken1',
-      homePath: '/dashboard/analysis',
+      homePath: '/config/eslint',
       roles: [
         {
           roleName: 'Super Admin',

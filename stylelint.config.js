@@ -7,8 +7,8 @@ module.exports = {
   ],
   // https://stylelint.docschina.org/user-guide/rules/
   rules: {
-    // 允许嵌套的深度最多 5 层
-    'max-nesting-depth': 5,
+    // 允许嵌套的深度最多 10 层
+    'max-nesting-depth': 10,
     // 防止::deep报错
     'selector-pseudo-element-no-unknown': null,
     // 防止类似@mixin报错

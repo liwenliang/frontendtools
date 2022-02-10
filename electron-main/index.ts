@@ -1,6 +1,7 @@
 import { app, BrowserWindow, screen } from 'electron';
 import is_dev from 'electron-is-dev';
 import { join } from 'path';
+import eslint from './modules/eslint';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -62,3 +63,5 @@ app.on('activate', () => {
     new createWin();
   }
 });
+
+eslint.init(mainWindow);

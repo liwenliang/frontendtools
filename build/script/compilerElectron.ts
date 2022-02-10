@@ -1,12 +1,11 @@
-import rollup, { OutputOptions } from 'rollup';
 import chalk from 'chalk';
-import ora from 'ora';
-import waitOn from 'wait-on';
-import net from 'net';
-import { URL } from 'url';
-import minimist from 'minimist';
 import electronConnect from 'electron-connect';
-
+import minimist from 'minimist';
+import net from 'net';
+import ora from 'ora';
+import rollup, { OutputOptions } from 'rollup';
+import { URL } from 'url';
+import waitOn from 'wait-on';
 import { getRollupOptions } from '../config/rollupElectronConfig';
 
 const argv = minimist(process.argv.slice(2));
@@ -57,7 +56,7 @@ export function startCompilerElectron(port = 80) {
         } else {
           watchFunc();
         }
-      }
+      },
     );
   } else {
     spinner.start();

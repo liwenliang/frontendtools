@@ -215,8 +215,8 @@
       background-color: @component-background;
 
       .scrollbar__wrap {
-        padding: 16px !important;
         margin-bottom: 0 !important;
+        padding: 16px !important;
       }
 
       > .scrollbar > .scrollbar__bar.is-horizontal {
@@ -229,11 +229,11 @@
     position: absolute;
 
     .ant-drawer-header {
+      box-sizing: border-box;
       width: 100%;
       height: @detail-header-height;
       padding: 0;
       border-top: 1px solid @border-color-base;
-      box-sizing: border-box;
     }
 
     .ant-drawer-title {
