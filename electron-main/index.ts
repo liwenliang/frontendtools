@@ -1,7 +1,8 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, screen } from 'electron';
 import is_dev from 'electron-is-dev';
 import { join } from 'path';
 import eslint from './modules/eslint';
+import stylelint from './modules/stylelint';
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -64,4 +65,12 @@ app.on('activate', () => {
   }
 });
 
-eslint.init(mainWindow);
+// 主进程
+ipcMain.on('open-directory-dialog', (event, params) => {
+  dialog.showOpenDialog(mainWindow, { properties: [params] }).then(({ canceled, filePaths }) => {
+    event.sender.send('selectedItem', { canceled, filePaths });
+  });
+});
+
+eslint.init();
+stylelint.init();

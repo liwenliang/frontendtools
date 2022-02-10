@@ -4,17 +4,16 @@ import Config from './config';
 import { customSettings } from './settings.js';
 const { extendMap, formatVersion } = Config;
 
-async function eslint({ versionName, targetPath, installType }, sender) {
-  console.log('inEslint', { versionName, targetPath, installType });
-  const selectItem = formatVersion[versionName];
+async function stylelint({ versionName, targetPath, installType }, sender) {
+  let selectItem = formatVersion[versionName];
 
-  // 安装eslint相关依赖
+  // 安装stylelint相关依赖
   await installDeps(selectItem, installType, targetPath, sender);
 
   // 将配置文件拷贝到项目中，并覆盖原有文件
-  await copy(`${__dirname}/eslint/${selectItem.template}/`, `${targetPath}`);
+  await copy(`${__dirname}/stylelint/${selectItem.template}/`, `${targetPath}`);
 
-  // 循环安装eslint插件
+  // 循环安装stylelint插件
   await installExtends(extendMap, sender);
 
   // 配置vscode项目设置
@@ -24,9 +23,11 @@ async function eslint({ versionName, targetPath, installType }, sender) {
 }
 
 const init = () => {
-  ipcMain.on('eslint-excute', async (event, params) => {
-    await eslint(params, event.sender);
+  ipcMain.on('stylelintExcute', async (event, params) => {
+    await stylelint(params, event.sender);
   });
 };
 
 export default { init };
+
+module.exports = stylelint;
