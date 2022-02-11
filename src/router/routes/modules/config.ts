@@ -28,6 +28,14 @@ const dashboard: AppRouteModule = {
         title: 'stylelint',
       },
     },
+    {
+      path: 'commitlint',
+      name: 'ConfigCommitlint',
+      component: () => import('/@/views/config/commitlint/index.vue'),
+      meta: {
+        title: 'commitlint',
+      },
+    },
   ],
 };
 

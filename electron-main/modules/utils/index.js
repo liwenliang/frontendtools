@@ -93,6 +93,17 @@ async function installDeps(selectItem, installType, targetPath, sender) {
   sender.send('excuteMessage', `安装完成！`);
 }
 
+/**
+ * 顺序执行command命令
+ */
+async function excuteCommand(commandArr, targetPath, sender) {
+  for (let index = 0; index < commandArr.length; index++) {
+    const command = commandArr[index];
+    sender.send('excuteMessage', command);
+    await exec(`cd ${targetPath} && ${command}`);
+  }
+}
+
 var checkDirectory = function (src, dst, callback) {
   fs.access(dst, fs.constants.F_OK, (err) => {
     if (err) {
@@ -147,4 +158,5 @@ module.exports = {
   installDeps,
   copy,
   getPackageJson,
+  excuteCommand,
 };

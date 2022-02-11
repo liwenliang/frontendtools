@@ -1,10 +1,30 @@
 <template>
-  <PageWrapper title="Stylelint配置页面">
+  <PageWrapper title="CommitLint配置页面">
     <template #headerContent>
       <ul>
         <li>
-          关于stylelint的配置及其说明可以看
-          <a href="https://stylelint.docschina.org/user-guide/rules/" target="_blank"> 官方文档 </a>
+          commitlint可以参考这个地址
+          <a
+            target="_blank"
+            href="https://vvbin.cn/doc-next/dep/lint.html#git-%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83"
+          >
+            Vben Admin提交规范
+          </a>
+        </li>
+        <li>
+          <Tag>feat: 增加新功能</Tag>
+          <Tag>fix: 修复问题/bug</Tag>
+          <Tag>style: 代码风格相关无影响运行结果的</Tag>
+          <Tag>perf: 优化/性能提升</Tag>
+          <Tag>refactor: 重构</Tag>
+          <Tag>revert: 撤销修改</Tag>
+          <Tag>test: 测试相关</Tag>
+          <Tag>docs: 文档/注释</Tag>
+          <Tag>chore: 依赖更新/脚手架配置修改等</Tag>
+          <Tag>ci: 持续集成</Tag>
+          <Tag>mod: 不确定分类的修改</Tag>
+          <Tag>build: 构建项目</Tag>
+          <Tag>types: 类型修改</Tag>
         </li>
       </ul>
     </template>
@@ -41,7 +61,7 @@
 
 <script lang="ts" setup>
   import { reactive, ref } from 'vue';
-  import { Form, Select, Input, Button, Space, Spin } from 'ant-design-vue';
+  import { Form, Select, Input, Button, Space, Spin, Tag } from 'ant-design-vue';
   import { PageWrapper } from '/@/components/Page';
   const { ipcRenderer } = window.require('electron');
   let FormItem = Form.Item;
@@ -81,8 +101,8 @@
 
   let onSubmit = () => {
     excuteLoading.value = true;
-    ipcRenderer.send('stylelintExcute', {
-      versionName: 'stylelint',
+    ipcRenderer.send('commitlintExcute', {
+      versionName: 'commitlint',
       targetPath: formState.projectPath,
       installType: formState.packageType,
     });

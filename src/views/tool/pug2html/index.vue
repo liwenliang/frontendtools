@@ -3,20 +3,21 @@
     <Row :gutter="12">
       <Col :span="12">
         <p>pug</p>
-        <Textarea :rows="8" v-model:value="pugContent" @change="onPugContentChanged" />
+        <TextArea :rows="8" v-model:value="pugContent" @change="onPugContentChanged" />
       </Col>
       <Col :span="12">
         <p>html</p>
-        <Textarea :rows="8" v-model:value="htmlContent" />
+        <TextArea :rows="8" v-model:value="htmlContent" />
       </Col>
     </Row>
   </PageWrapper>
 </template>
 
 <script lang="ts" setup>
-  import { Textarea, Row, Col } from 'ant-design-vue';
-  import { ref } from 'vue-demi';
+  import { Row, Col, Input } from 'ant-design-vue';
+  import { ref } from 'vue';
   import { PageWrapper } from '/@/components/Page';
+  let TextArea = Input.TextArea;
   // import pug from 'pug';
   const pug = require('pug');
 
@@ -27,8 +28,3 @@
     htmlContent.value = pug.render(pugContent.value, { pretty: true });
   };
 </script>
-<style lang="less" scoped>
-  h1 {
-    color: red;
-  }
-</style>
