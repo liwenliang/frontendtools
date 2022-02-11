@@ -1,5 +1,29 @@
 <template>
-  <PageWrapper title="Eslint配置页面" content="基础配置">
+  <PageWrapper title="Eslint配置页面">
+    <template #headerContent>
+      <ul>
+        <li>
+          关于eslint的配置及其说明可以看
+          <a href="https://cloud.tencent.com/developer/section/1135587" target="_blank">
+            腾讯文档
+          </a>
+        </li>
+        <li>
+          eslint
+          <a href="https://cn.eslint.org/docs/rules/" target="_blank">中文官方文档</a>
+        </li>
+        <li>
+          关于prettier的配置及其说明可以看
+          <a href="https://www.prettier.cn/docs/options.html" target="_blank">官方文档</a>
+        </li>
+        <li>
+          <a href="https://eslint.vuejs.org/rules/max-attributes-per-line.html" target="_blank">
+            eslint-plugin-vue
+          </a>
+          这里是一些关于vue的格式化配置，可以通过这个文档了解vue格式化的思路
+        </li>
+      </ul>
+    </template>
     <Spin :spinning="excuteLoading" :tip="excuteMessage">
       <Form ref="formRef" :model="formState" :label-col="labelCol" :wrapper-col="wrapperCol">
         <FormItem label="项目地址" name="projectPath">

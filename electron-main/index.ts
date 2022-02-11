@@ -5,7 +5,7 @@ import eslint from './modules/eslint';
 import stylelint from './modules/stylelint';
 
 let mainWindow: BrowserWindow | null = null;
-
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 class createWin {
   constructor() {
     const displayWorkAreaSize = screen.getAllDisplays()[0].workArea;

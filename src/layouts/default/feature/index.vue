@@ -67,13 +67,13 @@
     right: 0;
     z-index: 10;
     display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     color: @white;
-    cursor: pointer;
     background-color: @primary-color;
     border-radius: 6px 0 0 6px;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
 
     svg {
       width: 1em;
