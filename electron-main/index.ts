@@ -4,6 +4,7 @@ import { join } from 'path';
 import commitlint from './modules/commitlint';
 import eslint from './modules/eslint';
 import stylelint from './modules/stylelint';
+import tools from './modules/tools';
 
 let mainWindow: BrowserWindow | null = null;
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
@@ -76,3 +77,4 @@ ipcMain.on('open-directory-dialog', (event, params) => {
 eslint.init();
 stylelint.init();
 commitlint.init();
+tools.init();

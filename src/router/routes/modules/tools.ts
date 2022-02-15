@@ -20,6 +20,14 @@ const tools: AppRouteModule = {
         title: 'pug2html',
       },
     },
+    {
+      path: 'usefulLink',
+      name: 'ToolUseFulLink',
+      component: () => import('/@/views/tool/usefulLink/index.vue'),
+      meta: {
+        title: 'usefulLink',
+      },
+    },
   ],
 };
 
