@@ -19,12 +19,14 @@
   import { PageWrapper } from '/@/components/Page';
   let TextArea = Input.TextArea;
   // import pug from 'pug';
-  const pug = require('pug');
+  const pug = window.require('pug');
 
   let pugContent = ref('');
   let htmlContent = ref('');
 
   let onPugContentChanged = () => {
-    htmlContent.value = pug.render(pugContent.value, { pretty: true });
+    try {
+      htmlContent.value = pug.render(pugContent.value, { pretty: true });
+    } catch (error) {}
   };
 </script>
